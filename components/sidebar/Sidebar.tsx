@@ -8,9 +8,9 @@ type SidebarProps = {};
 const Sidebar: React.FC<SidebarProps> = () => {
 
     return (
-        <div className='flex flex-col w-full'>
+        <div className='flex flex-col w-full '>
             <SidebarTop />
-            <div className=" p-2 m-2 rounded h-fit bg-neutral-900 float-left">
+            <div className=" p-2 m-2 rounded h-full bg-neutral-900 float-left">
                 <SidebarNav/>
                 <SidebarBody/>
 

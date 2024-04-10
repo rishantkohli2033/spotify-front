@@ -1,5 +1,7 @@
 import React from 'react';
 import { GiBookshelf } from "react-icons/gi";
+import { BiSearchAlt2 } from "react-icons/bi";
+import { TbTriangleInvertedFilled } from 'react-icons/tb';
 type SidebarNavProps = {
     
 };
@@ -41,10 +43,10 @@ const SidebarNav:React.FC<SidebarNavProps> = () => {
             </div>
             
         </div>
-        <div className='flex'>
-            🔍
-            <div className='flex flex-grow justify-end text-sm'>
-                Recent&nbsp;🔽
+        <div className='flex p-2'>
+        <BiSearchAlt2/>
+            <div className='flex flex-grow justify-end text-sm items-center'>
+                Recent&nbsp;<TbTriangleInvertedFilled />
             </div>
         </div>
         
