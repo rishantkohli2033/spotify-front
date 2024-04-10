@@ -17,7 +17,7 @@ const SidebarNav:React.FC<SidebarNavProps> = () => {
             </div>
         </div>
         {/* comment */}
-        <div className='flex text-sm m-2 sm:ml-2 md:ml-4 lg:ml-40
+        <div className='flex text-sm m-2 sm:ml-2 md:ml-4 
         pb-2 overflow-x-auto max-w-72 h-auto
          space-x-2 pt-2'>
             <div className='bg-neutral-800 rounded-2xl p-2'>
