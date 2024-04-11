@@ -3,6 +3,7 @@ import { GoHome } from "react-icons/go";
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
 import { BiSearchAlt2 } from "react-icons/bi";
 import Button from '../button/Button';
+import ListItem from '../list-item/ListItem';
 type HeaderProps = {};
 
 const Header:React.FC<HeaderProps> = () => {
@@ -33,7 +34,15 @@ const Header:React.FC<HeaderProps> = () => {
                         </div>
                     </>
                 </div>
+            
             </div>
+            <h1 className='text-white text-3xl font-semibold'>
+                Good Morning
+            </h1>
+            <div className=' grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-3 2xl:grid-cols-4 gap-4 mt-4'>
+                <ListItem/>
+            </div>
+            
         </div>
     )
 }
