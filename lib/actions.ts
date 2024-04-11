@@ -49,4 +49,19 @@ export const getPlaylist = async (token:any) =>{
     }
 }
 
+export const getBrowseCategories = async (token:any) =>{
+    try {
+        const res = await fetch(`https://api.spotify.com/v1/browse/categories`, {
+            method: 'GET',
+            headers: { 'Authorization' : 'Bearer ' + token}
+        });
+        
+        if(!res){throw new Error;} 
+        const data = await res.json();
+        return data.categories.items;
+    } catch (error:any) {
+        console.log(error.message);
+    }
+}
+
 

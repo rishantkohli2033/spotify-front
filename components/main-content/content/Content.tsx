@@ -15,7 +15,7 @@ const Content: React.FC<ContentProps> = () => {
             if (!token) console.log("error");
             //const res = await getGenres(token);
             const res = await getPlaylist(token);
-            console.log(res);
+            // console.log(res);
             setAccessToken(token);
             setPlaylist(res);
             //setGenres(res);
