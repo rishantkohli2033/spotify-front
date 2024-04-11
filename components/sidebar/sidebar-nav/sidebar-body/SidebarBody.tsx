@@ -1,4 +1,5 @@
 import React from 'react';
+import SidebarBodyItem from './sidebar-body-tem/SidebarBodyItem';
 
 type SidebarBodyProps = {
     
@@ -7,15 +8,8 @@ type SidebarBodyProps = {
 const SidebarBody:React.FC<SidebarBodyProps> = () => {
     
     return (
-        // <div className='p-4 ml-1 space-y-2 lg:max-h-96 sm:max-h-48 overflow-y-scroll'>
-        //     {Array.from(Array(25).keys()).map((index) => (
-        //         <div className='bg-neutral-800 text-center rounded-2xl p-1' key={index}>
-        //             Content {index + 1}
-        //         </div>
-        //     ))}
-        // </div>
-        <div>
-            List of Songs!!
+        <div className='flex flex-col gap-y-2 mt-4 px-3'>
+            <SidebarBodyItem/>
         </div>
     )
 }
