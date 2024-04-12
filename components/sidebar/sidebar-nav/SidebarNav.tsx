@@ -2,6 +2,7 @@ import React from 'react';
 import { GiBookshelf } from "react-icons/gi";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { TbTriangleInvertedFilled } from 'react-icons/tb';
+import { Button } from '@/components/ui/button';
 type SidebarNavProps = {
     
 };
@@ -20,27 +21,27 @@ const SidebarNav:React.FC<SidebarNavProps> = () => {
         <div className='flex text-sm m-2 sm:ml-2 md:ml-4 
         pb-2 overflow-x-auto max-w-72 h-auto
          space-x-2 pt-2 transition rounded-2xl'>
-            <div className='bg-neutral-800 rounded-2xl p-2'>
+            <Button variant={'ghost'} className='bg-transparent rounded-full p-2'>
                 Playlists   
-            </div>
-            <div className='bg-neutral-800 rounded-2xl p-2'>
+            </Button>
+            <Button variant={'ghost'} className='bg-transparent rounded-full p-2'>
                 Artists
-            </div>
-            <div className='bg-neutral-800 rounded-2xl p-2'>
+            </Button>
+            <Button variant={'ghost'} className='bg-transparent rounded-full p-2'>
                 Albums
-            </div>
-            <div className='bg-neutral-800 rounded-2xl p-2'>
+            </Button>
+            <Button variant={'ghost'} className='bg-transparent rounded-full p-2'>
                 Podcasts    
-            </div>
-            <div className='bg-neutral-800 rounded-2xl p-2'>
+            </Button>
+            <Button variant={'ghost'} className='bg-transparent rounded-full p-2'>
                 Trending
-            </div>
-            <div className='bg-neutral-800 rounded-2xl p-2'>
+            </Button>
+            <Button variant={'ghost'} className='bg-transparent rounded-full p-2'>
                 Recent
-            </div>
-            <div className='bg-neutral-800 rounded-2xl p-2'>
+            </Button>
+            <Button variant={'ghost'} className='bg-transparent rounded-full p-2'>
                 Latest
-            </div>
+            </Button>
             
         </div>
         <div className='flex p-2'>

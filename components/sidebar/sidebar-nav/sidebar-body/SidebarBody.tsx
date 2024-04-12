@@ -24,11 +24,14 @@ const SidebarBody: React.FC<SidebarBodyProps> = () => {
 
     }, []);
     return (
-        categories.map((category:any,idx:number) => (
-            <div key={idx} className='flex flex-col gap-y-2 mt-4 px-3'>
-                <SidebarBodyItem itemImage={category.icons[0].url} itemName={category.name}/>
-            </div>
-        ))
+        <div className='flex flex-col gap-y-2 mt-4 px-3 overflow-y-auto'>
+            {categories.map((category: any, idx: number) => (
+
+                <SidebarBodyItem key={idx} itemImage={category.icons[0].url} itemName={category.name} />
+
+            ))}
+        </div>
+        
 
     )
 }
