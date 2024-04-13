@@ -1,4 +1,5 @@
 "use client"
+import { Skeleton } from '@/components/ui/skeleton';
 import { getGenres, getToken } from '@/lib/actions';
 import useHomeSearch from '@/store/useHomeSearch';
 import Image from 'next/image';
@@ -12,7 +13,7 @@ type SongItemProps = {
 };
 
 const SongItem:React.FC<SongItemProps> = ({songImage, songName, songArtist}) => {
-    const {player, setPlayer, setPlayerImage, setPlayerName, setPlayerAuthor} = useHomeSearch();
+    const {player, setPlayer, setPlayerImage, setPlayerName, setPlayerAuthor, loading, setLoading} = useHomeSearch();
     const handleClick = () =>{
         setPlayer(!player);
         setPlayerImage(songImage);
@@ -20,7 +21,9 @@ const SongItem:React.FC<SongItemProps> = ({songImage, songName, songArtist}) => 
         setPlayerAuthor(songArtist);
     }
     return (
-        <div onClick={handleClick} className="relative group flex flex-col items-center justify-center rounded-md overflow-hidden gap-x-4 cursor-pointer hover:bg-neutral-400/10 active:bg-black transition p-3">
+        <>
+        { !loading &&(
+            <div onClick={handleClick} className="relative group flex flex-col items-center justify-center rounded-md overflow-hidden gap-x-4 cursor-pointer hover:bg-neutral-400/10 active:bg-black transition p-3">
             <div className='relative aspect-square w-full h-full rounded-md overflow-hidden'>
 
                 <Image className="object-cover" src={songImage} alt={"Song Cover"} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" priority={true}/>
@@ -38,8 +41,10 @@ const SongItem:React.FC<SongItemProps> = ({songImage, songName, songArtist}) => 
                     <FaPlay className='text-black' />
                 </button>
             </div>
-        </div>
+        </div>)}
 
+
+       </>     
     )
 }
 export default SongItem;

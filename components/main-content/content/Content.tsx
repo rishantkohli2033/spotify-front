@@ -3,24 +3,24 @@ import React, { useEffect, useState } from 'react';
 import SongItem from './SongItem';
 import { getGenres, getPlaylist, getToken } from '@/lib/actions';
 import useHomeSearch from '@/store/useHomeSearch';
+import { Skeleton } from '@/components/ui/skeleton';
+import LoadingSkeleton from '@/components/loading-skeleton/LoadingSkeleton';
 
 type ContentProps = {};
 
 const Content: React.FC<ContentProps> = () => {
     const [accessToken, setAccessToken] = useState("");
-    const [genres, setGenres] = useState([]);
     const [playlist, setPlaylist] = useState([]);
-    const {player, setPlayer} = useHomeSearch();
+    const {loading, setLoading} = useHomeSearch();
     useEffect(() => {
         const genToken = async () => {
+            setLoading(true);
             const token = await getToken();
             if (!token) console.log("error");
-            //const res = await getGenres(token);
             const res = await getPlaylist(token);
-            // console.log(res);
             setAccessToken(token);
             setPlaylist(res);
-            //setGenres(res);
+            setLoading(false);
         }
         genToken();
 
@@ -28,11 +28,21 @@ const Content: React.FC<ContentProps> = () => {
     
     return (
         <>
-            {
-                playlist.map((playlist:any, idx: number) => (
+            { !loading && 
+                (playlist.map((playlist: any, idx: number) => (
                     <div key={idx} >
-                        <SongItem songImage={playlist.track.album.images[0].url} songName={playlist.track.name} songArtist={playlist.track.artists[0].name}/>
+                        <SongItem songImage={playlist.track.album.images[0].url} songName={playlist.track.name} songArtist={playlist.track.artists[0].name} />
                     </div>
+                )))
+            }
+            {
+                loading && [...Array(18)].map(()=>(
+                    <>
+                    <LoadingSkeleton/>
+                    <div>
+
+                    </div>
+                    </>
                 ))
             }
         </>

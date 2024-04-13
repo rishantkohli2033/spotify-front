@@ -13,6 +13,8 @@ interface HomeSearchState {
     setPlayerName: (val: string) => void;
     playerAuthor: string,
     setPlayerAuthor: (val: string) => void;
+    loading: boolean,
+    setLoading: (val: boolean) => void;
 }
 
 const useHomeSearch = create<HomeSearchState>((set) => ({
@@ -27,7 +29,9 @@ const useHomeSearch = create<HomeSearchState>((set) => ({
     playerName: "",
     setPlayerName: (val: string) => set({playerName: val}),
     playerAuthor: "",
-    setPlayerAuthor: (val: string) => set({playerAuthor: val})
+    setPlayerAuthor: (val: string) => set({playerAuthor: val}),
+    loading: false,
+    setLoading: (val: boolean) => set({loading: val})
 }));
 
 export default useHomeSearch;

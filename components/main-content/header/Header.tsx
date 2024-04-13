@@ -33,10 +33,10 @@ const Header: React.FC<HeaderProps> = () => {
                 </div>
                 <div className='flex md:hidden gap-x-2 items-center'>
                     <button onClick={homeClick} className='rounded-full p-2 bg-black flex items-center justify-center hover:opacity-75 transition'>
-                        {!homeClicked ? <PiHouse fontSize={30} /> : <PiHouseFill fontSize={30} />}
+                        {!homeClicked ? <PiHouse fontSize={30} /> : <PiHouseFill fontSize={30} className='text-green-500'/>}
                     </button>
                     <button onClick={searchClick} className='rounded-full p-2 bg-black flex items-center justify-center hover:opacity-75 transition'>
-                        {!searchClicked ? <BiSearchAlt2 fontSize={28} /> : <BiSolidSearchAlt2 fontSize={28} />}
+                        {!searchClicked ? <BiSearchAlt2 fontSize={28} /> : <BiSolidSearchAlt2 fontSize={28} className='text-green-500'/>}
                     </button>
                 </div>
                 <div className='flex justify-between items-center gap-x-4'>
