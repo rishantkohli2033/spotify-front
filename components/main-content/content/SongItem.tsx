@@ -23,7 +23,7 @@ const SongItem:React.FC<SongItemProps> = ({songImage, songName, songArtist}) => 
     return (
         <>
         { !loading &&(
-            <div onClick={handleClick} className="relative group flex flex-col items-center justify-center rounded-md overflow-hidden gap-x-4 cursor-pointer hover:bg-neutral-400/10 active:bg-black transition p-3">
+            <div onClick={handleClick} className="relative group flex flex-col items-center justify-center rounded-md overflow-hidden gap-x-4 cursor-pointer hover:bg-neutral-400/10 hover:scale-25 active:bg-black transition p-3">
             <div className='relative aspect-square w-full h-full rounded-md overflow-hidden'>
 
                 <Image className="object-cover" src={songImage} alt={"Song Cover"} fill sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw" priority={true}/>

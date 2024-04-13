@@ -31,18 +31,18 @@ const Content: React.FC<ContentProps> = () => {
             { !loading && 
                 (playlist.map((playlist: any, idx: number) => (
                     <div key={idx} >
-                        <SongItem songImage={playlist.track.album.images[0].url} songName={playlist.track.name} songArtist={playlist.track.artists[0].name} />
+                        <SongItem  songImage={playlist.track.album.images[0].url} songName={playlist.track.name} songArtist={playlist.track.artists[0].name} />
                     </div>
                 )))
             }
             {
-                loading && [...Array(18)].map(()=>(
-                    <>
-                    <LoadingSkeleton/>
-                    <div>
+                loading && [...Array(18)].map((_,idx)=>(
+                    <div key={idx}>
+                    <LoadingSkeleton  />
+                    <div >
 
+                    </div >
                     </div>
-                    </>
                 ))
             }
         </>

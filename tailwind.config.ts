@@ -19,6 +19,11 @@ const config = {
     },
     extend: {
       colors: {
+        "dark-layer-1": "rgb(40,40,40)",
+        "dark-layer-2": "rgb(26,26,26)",
+        "brand-orange": "rgb(255 161 22)",
+        "dark-pink": "rgb(255 55 95)",
+        "dark-green-s": "rgb(44 187 93)",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",

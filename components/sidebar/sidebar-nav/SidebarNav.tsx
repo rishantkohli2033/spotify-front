@@ -3,6 +3,8 @@ import { GiBookshelf } from "react-icons/gi";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { TbTriangleInvertedFilled } from 'react-icons/tb';
 import { Button } from '@/components/ui/button';
+import { HiPlus } from 'react-icons/hi2';
+import { FaPlus } from 'react-icons/fa6';
 type SidebarNavProps = {
     
 };
@@ -14,7 +16,7 @@ const SidebarNav:React.FC<SidebarNavProps> = () => {
         <div className='flex items-center'>
         <GiBookshelf fontSize={20}/> &nbsp; Your Library
             <div className='flex flex-grow justify-end'>
-                +&nbsp;&nbsp;&nbsp;{'->'}
+            <FaPlus />
             </div>
         </div>
         {/* comment */}

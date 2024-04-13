@@ -1,13 +1,13 @@
 import Image from 'next/image';
 import React from 'react';
 
-type SidebarBodyItemProps = {
+type PlayerSongProps = {
     itemImage: string;
     itemName: string;
-    
+    itemAuthor: string;
 };
 
-const SidebarBodyItem:React.FC<SidebarBodyItemProps> = ({itemImage, itemName }) => {
+const PlayerSong:React.FC<PlayerSongProps> = ({itemImage, itemName, itemAuthor}) => {
     
     return (
         <div className='flex items-center gap-x-3 cursor-pointer hover:bg-neutral-800/50 w-full p-2 rounded-md'>
@@ -17,8 +17,11 @@ const SidebarBodyItem:React.FC<SidebarBodyItemProps> = ({itemImage, itemName }) 
             <div className='flex flex-col gap-y-1 overflow-hidden'>
             <p className='text-white truncate'>{itemName.slice(0, 15) + (itemName.length > 15 ? '...' : '')}</p>    
             
+                <p className='text-neutral-400 text-sm truncate'>
+                    {itemAuthor}
+                </p>
             </div>
         </div>
     )
 }
-export default SidebarBodyItem;
+export default PlayerSong;

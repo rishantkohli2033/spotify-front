@@ -11,6 +11,7 @@ import {
  import { Button } from "@/components/ui/button"; 
 import { MdOutlineLogin } from "react-icons/md";
 import { IoIosClose } from "react-icons/io";
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 type SignupButtonProps = {
     
@@ -19,23 +20,19 @@ type SignupButtonProps = {
 const SignupButton:React.FC<SignupButtonProps> = () => {
     
     return (
-        <div className="relative">
-            <Drawer>
-            <DrawerTrigger> 
-                <MdOutlineLogin fontSize={28} className="text-white hover:bg-green-500 hover:text-black rounded-lg"/>
-            </DrawerTrigger>
-            <DrawerContent className="bg-transparent">
-                <DrawerFooter className="items-center">
-                    <Button className="rounded-full bg-green-500">Signup</Button>
-                    <Button className="rounded-full ">Login</Button>
-                    <DrawerClose className="absolute top-2 right-2 -mt-1">
-                        <IoIosClose className="hover:bg-red-500 rounded-full"/>
-                    </DrawerClose>
-                </DrawerFooter>
-            </DrawerContent>
-        </Drawer>
-        </div>
-        
+        <>
+            <div className='cursor-pointer group relative'>
+                <Avatar>
+                    <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
+                    <AvatarFallback>CN</AvatarFallback>
+                </Avatar>
+                <div className='absolute top-10 left-2/4 -translate-x-2/4  mx-auto bg-dark-layer-2 text-dark-green-s p-2 rounded shadow-lg z-40 group-hover:scale-100 scale-0 transition-all duration-300 ease-in-out'
+                >
+                    <p className='text-sm font-bold'>John Doe</p>
+                </div>
+            </div>
+
+        </>
 
     )
 }
