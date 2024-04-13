@@ -4,9 +4,10 @@ import React from 'react';
 type SidebarBodyItemProps = {
     itemImage: string;
     itemName: string;
+    itemAuthor: string;
 };
 
-const SidebarBodyItem:React.FC<SidebarBodyItemProps> = ({itemImage, itemName}) => {
+const SidebarBodyItem:React.FC<SidebarBodyItemProps> = ({itemImage, itemName, itemAuthor}) => {
     
     return (
         <div className='flex items-center gap-x-3 cursor-pointer hover:bg-neutral-800/50 w-full p-2 rounded-md'>
@@ -18,7 +19,7 @@ const SidebarBodyItem:React.FC<SidebarBodyItemProps> = ({itemImage, itemName}) =
                     {itemName}
                 </p>    
                 <p className='text-neutral-400 text-sm truncate'>
-                    Author
+                    {itemAuthor}
                 </p>
             </div>
         </div>

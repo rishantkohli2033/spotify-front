@@ -10,7 +10,7 @@ const SearchInput:React.FC<SearchInputProps> = () => {
     
     return (
         <div className='m-2 px-3 py-3'>
-            <Input className='bg-neutral-700 border-transparent text-sm' placeholder='Name of Artist'/>
+            <Input className='bg-neutral-700 border-transparent text-sm' placeholder='What do you want to play?'/>
         </div>
     )
 }

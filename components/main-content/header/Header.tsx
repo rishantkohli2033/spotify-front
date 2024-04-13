@@ -5,9 +5,9 @@ import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
 import { BiSearchAlt2 } from "react-icons/bi";
 import { BiSolidSearchAlt2 } from "react-icons/bi";
 import { PiHouse, PiHouseFill } from 'react-icons/pi';
-import Button from '../button/Button';
 import ListItem from '../list-item/ListItem';
 import useHomeSearch from '@/store/useHomeSearch';
+import SignupButton from '../button/SignupButton';
 type HeaderProps = {};
 
 const Header: React.FC<HeaderProps> = () => {
@@ -42,7 +42,7 @@ const Header: React.FC<HeaderProps> = () => {
                 <div className='flex justify-between items-center gap-x-4'>
                     <>
                         <div>
-                            <Button />
+                            <SignupButton/>
                         </div>
                     </>
                 </div>
