@@ -16,7 +16,6 @@ const Content: React.FC<ContentProps> = () => {
         const genToken = async () => {
             setLoading(true);
             const token = await getToken();
-            if (!token) console.log("error");
             const res = await getPlaylist(token);
             setAccessToken(token);
             setPlaylist(res);

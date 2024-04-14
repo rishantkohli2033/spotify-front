@@ -16,7 +16,6 @@ const Search:React.FC<SearchProps> = () => {
         const genToken = async () => {
             setLoading(true);
             const token = await getToken();
-            if (!token) console.log("error");
             const res = await getFeaturedPlaylists(token);
             setAccessToken(token);
             setCategories(res);

@@ -31,7 +31,7 @@ const PlayerContent: React.FC<PlayerContentProps> = () => {
     }, [playButtonClicked]);
 
     const handleVolumeChange = (value:number[]) => {
-        console.log(value)
+
         setVolume(value);
     };
     const handleLike = () => {
