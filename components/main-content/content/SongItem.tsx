@@ -19,6 +19,7 @@ const SongItem:React.FC<SongItemProps> = ({songImage, songName, songArtist,searc
         setPlayer(!player);
         setPlayerImage(songImage);
         setPlayerName(songName);
+        setPlayerAuthor("");
         if(songArtist) setPlayerAuthor(songArtist);
     }
     return (
