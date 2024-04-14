@@ -20,7 +20,7 @@ const SidebarNav:React.FC<SidebarNavProps> = () => {
         </div>
         {/* comment */}
         <div className='flex text-sm m-2 sm:ml-2 md:ml-4 
-        pb-2 overflow-x-auto max-w-72 h-auto
+        pb-2 hover:overflow-x-auto overflow-hidden max-w-72 h-auto
          space-x-2 pt-2 transition rounded-2xl'>
             <Button variant={'ghost'} className='bg-transparent rounded-full p-2'>
                 Playlists   
@@ -45,10 +45,10 @@ const SidebarNav:React.FC<SidebarNavProps> = () => {
             </Button>
             
         </div>
-        <div className='flex p-2'>
-        <BiSearchAlt2/>
-            <div className='flex flex-grow justify-end text-sm items-center'>
-                Recent&nbsp;<TbTriangleInvertedFilled />
+        <div className='flex p-2 items-center'>
+        <BiSearchAlt2 className='hover:cursor-pointer hover:opacity-75 '/>
+            <div className='flex flex-grow justify-end text-sm items-center hover:cursor-pointer '>
+                Recent&nbsp;<TbTriangleInvertedFilled className='hover:cursor-pointer hover:opacity-75 '/>
             </div>
         </div>
         

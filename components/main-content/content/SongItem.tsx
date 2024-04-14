@@ -10,9 +10,10 @@ type SongItemProps = {
     songImage: string;
     songName: string;
     songArtist?: string;
+    search: boolean;
 };
 
-const SongItem:React.FC<SongItemProps> = ({songImage, songName, songArtist}) => {
+const SongItem:React.FC<SongItemProps> = ({songImage, songName, songArtist,search}) => {
     const {player, setPlayer, setPlayerImage, setPlayerName, setPlayerAuthor, loading, setLoading} = useHomeSearch();
     const handleClick = () =>{
         setPlayer(!player);
@@ -36,7 +37,7 @@ const SongItem:React.FC<SongItemProps> = ({songImage, songName, songArtist}) => 
                     By {songArtist}
                 </p>)}
             </div>
-            <div className='fixed justify-center bottom-24 right-4  '>
+            <div className={`fixed justify-center ${search ? 'bottom-14' : 'bottom-24'} right-4`}>
                 <button className='transition opacity-0 rounded-full flex items-center bg-green-500 p-4 drop-shadows-md translate translate-y-1/4 group-hover:opacity-100 group-hover:translate-y-0 hover:scale-110'>
                     <FaPlay className='text-black' />
                 </button>

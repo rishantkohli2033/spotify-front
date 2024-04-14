@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import Header from '../main-content/header/Header';
-import Content from '../main-content/content/Content';
 import SearchInput from './search-input/SearchInput';
 import useHomeSearch from '@/store/useHomeSearch';
-import { getBrowseCategories, getFeaturedPlaylists, getGenres, getToken } from '@/lib/actions';
-import { Skeleton } from '../ui/skeleton';
+import { getFeaturedPlaylists, getToken } from '@/lib/actions';
 import SongItem from '../main-content/content/SongItem';
+import LoadingSkeleton from '../loading-skeleton/LoadingSkeleton';
 
 type SearchProps = {};
 
@@ -33,26 +32,28 @@ const Search:React.FC<SearchProps> = () => {
             <SearchInput />
         
             {!loading && <div className='m-4 grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8 gap-4 mt-4'>
+                
                 {categories.map((category: any, idx: number) => (
 
-                    <SongItem key={idx} songImage={category.images[0].url} songName={category.name} />
+                    <SongItem key={idx} songImage={category.images[0].url} songName={category.name} search={true}/>
 
                 ))}
+                
             </div>}
+            <div className='grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-5 2xl:grid-cols-8 gap-4 mt-4'>
+                
+            
             {
-                loading && [...Array(18)].map((_,idx:number) => (
+                loading && [...Array(18)].map((_,idx)=>(
                     <div key={idx}>
+                    <LoadingSkeleton  />
+                    <div >
 
-                        <div  className='flex items-center gap-x-3 cursor-pointer hover:bg-neutral-800/50 w-full p-2 rounded-md m-2'>
-                            <Skeleton className='h-20 w-20 bg-neutral-800 ' />
-                            <div className='flex flex-col gap-y-1 overflow-hidden'>
-                            <Skeleton className='h-4 w-28 bg-neutral-800 ' />
-                            
-                            </div>
-                        </div>
+                    </div >
                     </div>
                 ))
             }
+            </div>
             </div>
         </>
         

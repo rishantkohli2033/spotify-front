@@ -77,7 +77,7 @@ body,
 /* Nice looking dark mode scrollbar */
 ::-webkit-scrollbar {
   width: 0.2rem;
-  height: 0.3rem;
+  height: 0.2rem;
 }
 
 ::-webkit-scrollbar-track {
