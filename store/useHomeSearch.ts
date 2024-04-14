@@ -1,6 +1,8 @@
 import { create } from "zustand";
 
 interface HomeSearchState {
+    accessToken: string;
+    setAccessToken: (val: string) => void;
     searchClicked: boolean;
     setSearchClicked: (val: boolean) => void;
     homeClicked: boolean;
@@ -18,6 +20,8 @@ interface HomeSearchState {
 }
 
 const useHomeSearch = create<HomeSearchState>((set) => ({
+    accessToken: "",
+    setAccessToken: (val: string) => set({ accessToken: val }),
     searchClicked: false,
     setSearchClicked: (val: boolean) => set({ searchClicked: val }),
     homeClicked: false,

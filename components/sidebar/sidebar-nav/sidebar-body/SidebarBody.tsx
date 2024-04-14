@@ -1,10 +1,9 @@
 "use client"
 import React, { useEffect, useState } from 'react';
-import SidebarBodyItem from './sidebar-body-tem/SidebarBodyItem';
 import { getBrowseCategories, getToken } from '@/lib/actions';
 import useHomeSearch from '@/store/useHomeSearch';
-import LoadingSkeleton from '@/components/loading-skeleton/LoadingSkeleton';
 import { Skeleton } from '@/components/ui/skeleton';
+import PlayerSong from '@/components/main-content/player/player-content/player-song/PlayerSong';
 
 type SidebarBodyProps = {
 
@@ -33,7 +32,7 @@ const SidebarBody: React.FC<SidebarBodyProps> = () => {
             {!loading && <div className='flex flex-col gap-y-2 mt-4 px-3 overflow-y-auto'>
                 {categories.map((category: any, idx: number) => (
 
-                    <SidebarBodyItem key={idx} itemImage={category.icons[0].url} itemName={category.name} />
+                    <PlayerSong key={idx} itemImage={category.icons[0].url} itemName={category.name} />
 
                 ))}
             </div>}

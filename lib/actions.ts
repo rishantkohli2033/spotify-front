@@ -64,4 +64,19 @@ export const getBrowseCategories = async (token:any) =>{
     }
 }
 
+export const getFeaturedPlaylists = async (token:any) =>{
+    try {
+        const res = await fetch(`https://api.spotify.com/v1/browse/featured-playlists?`, {
+            method: 'GET',
+            headers: { 'Authorization' : 'Bearer ' + token}
+        });
+        
+        if(!res){throw new Error;} 
+        const data = await res.json();
+        return data.playlists.items;
+    } catch (error:any) {
+        console.log(error.message);
+    }
+}
+
 

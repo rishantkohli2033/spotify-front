@@ -17,6 +17,12 @@ const PlayerContent: React.FC<PlayerContentProps> = () => {
     const [like, setLike] = useState(false);
     const [playButtonClicked, setPlayButtonClicked] = useState(false);
     const VolumeIcon = true ? HiSpeakerXMark : HiSpeakerWave;
+    const [volume, setVolume] = useState([50]);
+
+    const handleVolumeChange = (value:number[]) => {
+        console.log(value)
+        setVolume(value);
+    };
     const handleLike = () => {
         setLike(!like);
     }
@@ -26,7 +32,7 @@ const PlayerContent: React.FC<PlayerContentProps> = () => {
     return (
         <>
             <div className='grid grid-cols-2 md:grid-cols-3 h-full'>
-                <Slider className='absolute bottom-[80px] -right-[2px] -pr-[50px] w-full' defaultValue={[50]} max={100} step={0.2} />
+                <Slider className='absolute bottom-[80px] -right-[2px] -pr-[50px] w-full' onValueChange={handleVolumeChange} value={volume} defaultValue={[50]} max={100} step={0.2} />
                 <div className='flex w-full justify-start'>
                     <div className='flex items-center gap-x-4'>
                         <PlayerSong itemImage={playerImage} itemName={playerName} itemAuthor={playerAuthor} />
@@ -52,7 +58,7 @@ const PlayerContent: React.FC<PlayerContentProps> = () => {
                 <div className='hidden md:flex w-full justify-end pr-2'>
                     <div className='flex items-center gap-x-2 w-[150px]'>
                         <VolumeIcon className='cursor-pointer' size={34} />
-                        <Slider defaultValue={[50]} max={100} step={0.2} />
+                        <Slider  defaultValue={[50]} max={100} step={0.2} />
                     </div>
 
 

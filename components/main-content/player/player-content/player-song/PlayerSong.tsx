@@ -4,7 +4,7 @@ import React from 'react';
 type PlayerSongProps = {
     itemImage: string;
     itemName: string;
-    itemAuthor: string;
+    itemAuthor?: string;
 };
 
 const PlayerSong:React.FC<PlayerSongProps> = ({itemImage, itemName, itemAuthor}) => {
@@ -17,9 +17,9 @@ const PlayerSong:React.FC<PlayerSongProps> = ({itemImage, itemName, itemAuthor})
             <div className='flex flex-col gap-y-1 overflow-hidden'>
             <p className='text-white truncate'>{itemName.slice(0, 15) + (itemName.length > 15 ? '...' : '')}</p>    
             
-                <p className='text-neutral-400 text-sm truncate'>
+                {itemAuthor && (<p className='text-neutral-400 text-sm truncate'>
                     {itemAuthor}
-                </p>
+                </p>)}
             </div>
         </div>
     )
