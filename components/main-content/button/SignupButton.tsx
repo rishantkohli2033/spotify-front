@@ -1,16 +1,3 @@
-import {
-    Drawer,
-    DrawerClose,
-    DrawerContent,
-    DrawerDescription,
-    DrawerFooter,
-    DrawerHeader,
-    DrawerTitle,
-    DrawerTrigger,
-  } from "@/components/ui/drawer"
- import { Button } from "@/components/ui/button"; 
-import { MdOutlineLogin } from "react-icons/md";
-import { IoIosClose } from "react-icons/io";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
 
 type SignupButtonProps = {
@@ -22,7 +9,7 @@ const SignupButton:React.FC<SignupButtonProps> = () => {
     return (
         <>
             <div className='cursor-pointer group relative'>
-                <Avatar>
+                <Avatar className="hover:scale-125">
                     <AvatarImage src="https://github.com/shadcn.png" alt="@shadcn" />
                     <AvatarFallback>CN</AvatarFallback>
                 </Avatar>

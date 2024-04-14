@@ -2,18 +2,15 @@ import SidebarTop from "@/components/sidebar/SidebarTop"
 import { Menu } from "@/components/sidebar/sidebar-nav/Menu/Menu"
 import SidebarBody from "@/components/sidebar/sidebar-nav/sidebar-body/SidebarBody"
 import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
 import {
     Sheet,
     SheetClose,
     SheetContent,
-    SheetDescription,
     SheetFooter,
     SheetHeader,
-    SheetTitle,
     SheetTrigger,
 } from "@/components/ui/sheet"
-import { FaAnglesLeft, FaAnglesRight } from "react-icons/fa6"
+import { FaAnglesRight } from "react-icons/fa6"
 
 export function SideSheet() {
     return (

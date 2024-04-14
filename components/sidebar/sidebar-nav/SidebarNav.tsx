@@ -1,15 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { GiBookshelf } from "react-icons/gi";
 import { BiSearchAlt2 } from "react-icons/bi";
 import { TbTriangleInvertedFilled } from 'react-icons/tb';
 import { Button } from '@/components/ui/button';
 import { Menu } from './Menu/Menu';
+import { RecentMenu } from './recent-menu/RecentMenu';
 type SidebarNavProps = {
     
 };
 
 const SidebarNav:React.FC<SidebarNavProps> = () => {
-    
+    const [searchOpen, setSearchOpen] = useState(false);
     return (
     <div className='flex flex-col '>
         <div className='flex items-center'>
@@ -45,10 +46,16 @@ const SidebarNav:React.FC<SidebarNavProps> = () => {
             </Button>
             
         </div>
-        <div className='flex p-2 items-center'>
-        <BiSearchAlt2 className='hover:cursor-pointer hover:opacity-75 '/>
+        <div className='flex pl-2 items-center '>
+        <BiSearchAlt2 onClick={()=>setSearchOpen(!searchOpen) }className='hover:cursor-pointer hover:opacity-75' size={18}/>
+
+        {searchOpen && (
+            <div className='pl-2 pb-1 '>
+                <input type='text' className='rounded-full  bg-neutral-700 h-7 w-20 p-2 focus:outline-none text-sm  transition-transform duration-500 translate-x-0' placeholder='Search'/>
+            </div>
+        )}
             <div className='flex flex-grow justify-end text-sm items-center hover:cursor-pointer '>
-                Recent&nbsp;<TbTriangleInvertedFilled className='hover:cursor-pointer hover:opacity-75 '/>
+                <RecentMenu />
             </div>
         </div>
         

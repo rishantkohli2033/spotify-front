@@ -1,20 +1,17 @@
 "use client"
 import React, { useState } from 'react';
-import { GoHome } from "react-icons/go";
 import { RxCaretLeft, RxCaretRight } from 'react-icons/rx';
 import { BiSearchAlt2 } from "react-icons/bi";
 import { BiSolidSearchAlt2 } from "react-icons/bi";
 import { PiHouse, PiHouseFill } from 'react-icons/pi';
-import ListItem from '../list-item/ListItem';
 import useHomeSearch from '@/store/useHomeSearch';
 import SignupButton from '../button/SignupButton';
-import { Sheet } from '@/components/ui/sheet';
 import { SideSheet } from './SideSheet';
+import ListItem from './list-item/ListItem';
 type HeaderProps = {};
 
 const Header: React.FC<HeaderProps> = () => {
     const { searchClicked, setSearchClicked, homeClicked, setHomeClicked } = useHomeSearch(); //global state
-    const [side, setSide] = useState(false);
     const searchClick = () => {
         if (homeClicked) setHomeClicked(false);
         setSearchClicked(!searchClicked);
@@ -23,9 +20,7 @@ const Header: React.FC<HeaderProps> = () => {
         if (searchClicked) setSearchClicked(false);
         setHomeClicked(!homeClicked);
     }
-    const handleSide = () => {
-        setSide(!side);
-    }
+    
     return (
         <>
             <div className={`h-fit ${!searchClicked && `bg-gradient-to-b from-emerald-800`}  p-6`}>
@@ -41,11 +36,9 @@ const Header: React.FC<HeaderProps> = () => {
                     <div className='flex md:hidden gap-x-2 items-center'>
                         <div className='md:hidden flex items-center justify-start fixed inset-0 inset-y-20'>
                             <div className='mx-2 my-2'>
-                                <SideSheet />
+                                 <SideSheet />{/*for sidebar in mobile mode */}
                             </div>
                         </div>
-
-
 
                         <button onClick={homeClick} className='rounded-full p-2 bg-black flex items-center justify-center hover:opacity-75 transition'>
                             {!homeClicked ? <PiHouse fontSize={30} /> : <PiHouseFill fontSize={30} className='text-green-500' />}

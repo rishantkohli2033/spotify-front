@@ -9,15 +9,13 @@ import LoadingSkeleton from '../loading-skeleton/LoadingSkeleton';
 type SearchProps = {};
 
 const Search:React.FC<SearchProps> = () => {
-    const [accessToken, setAccessToken] = useState("");
-    const {playerAuthor,loading, setLoading} = useHomeSearch();
+    const {loading, setLoading} = useHomeSearch();
     const [categories, setCategories] = useState([]);
     useEffect(() => {
         const genToken = async () => {
             setLoading(true);
             const token = await getToken();
             const res = await getFeaturedPlaylists(token);
-            setAccessToken(token);
             setCategories(res);
             setLoading(false);
         }

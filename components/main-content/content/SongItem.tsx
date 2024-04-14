@@ -1,9 +1,7 @@
 "use client"
-import { Skeleton } from '@/components/ui/skeleton';
-import { getGenres, getToken } from '@/lib/actions';
 import useHomeSearch from '@/store/useHomeSearch';
 import Image from 'next/image';
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { FaPlay } from 'react-icons/fa';
 
 type SongItemProps = {
@@ -14,13 +12,13 @@ type SongItemProps = {
 };
 
 const SongItem:React.FC<SongItemProps> = ({songImage, songName, songArtist,search}) => {
-    const {player, setPlayer, setPlayerImage, setPlayerName, setPlayerAuthor, loading, setLoading} = useHomeSearch();
+    const {player, setPlayer, setPlayerImage, setPlayerName, setPlayerAuthor, loading} = useHomeSearch();
     const handleClick = () =>{
         setPlayer(!player);
         setPlayerImage(songImage);
         setPlayerName(songName);
-        setPlayerAuthor("");
-        if(songArtist) setPlayerAuthor(songArtist);
+        setPlayerAuthor(""); //to reset the global Author state because they might not be available 
+        if(songArtist) setPlayerAuthor(songArtist); //if they are availale then they will be set here
     }
     return (
         <>

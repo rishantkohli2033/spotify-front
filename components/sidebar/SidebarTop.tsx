@@ -1,6 +1,5 @@
 "use client"
-import React, { useState } from 'react';
-import { Button } from "@/components/ui/button"
+import React from 'react';
 import { BiSearchAlt2 } from "react-icons/bi";
 import { BiSolidSearchAlt2 } from "react-icons/bi";
 import { PiHouse, PiHouseFill } from 'react-icons/pi';
